@@ -1,7 +1,7 @@
 
 #accepts the array and turns it into a hash. the hash will include item counts
 def consolidate_cart(cart)
-  Hash[cart]
+  cart.each do |item|
 end
 
 def apply_coupons(cart, coupons)
