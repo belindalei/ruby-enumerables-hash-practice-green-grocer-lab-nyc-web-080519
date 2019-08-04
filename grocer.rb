@@ -1,10 +1,5 @@
 
 #accepts the array and turns it into a hash. the hash will include item counts
-def consolidate_cart(cart)
-  cart.each do |item_name, item_properties|
-  puts item_name
-  end 
-end
 
 items.each do |item|
   item.each do |key, val|
@@ -12,6 +7,16 @@ items.each do |item|
     puts val
   end
 end
+
+def consolidate_cart(cart)
+  cart.each do |item|
+  item.each do |item_name, item_properties|
+  puts item_name
+  puts item_properties 
+  end 
+end
+
+
 
 def apply_coupons(cart, coupons)
   # code here
