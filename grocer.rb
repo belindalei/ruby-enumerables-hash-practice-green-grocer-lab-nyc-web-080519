@@ -10,10 +10,10 @@ end
 
 def consolidate_cart(cart)
   cart.each do |item|
-  item.each do |item_name, item_properties|
-  puts item_name
-  puts item_properties 
-  end 
+    item.each do |item_name, item_properties|
+    puts item_name
+    puts item_properties 
+    end 
 end
 
 
