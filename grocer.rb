@@ -2,12 +2,18 @@
 #accepts the array and turns it into a hash. the hash will include item counts
 
 def consolidate_cart(cart)
+  hash = {}
   cart.each do |item|
-    item.each do |item_name, item_properties|
-      puts item_name
-      puts item_properties 
-    end 
-  end 
+    item.each do |key, val|
+      if hash.has_key?(key)
+        hash[key][:count] += 1
+      else
+        hash[key] = val
+        val[:count] = 1
+      end
+    end
+  end
+  hash
 end
 
 
