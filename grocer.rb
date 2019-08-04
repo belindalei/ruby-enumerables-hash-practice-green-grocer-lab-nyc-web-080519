@@ -18,7 +18,20 @@ end
 
 
 def apply_coupons(cart, coupons)
-  # code here
+  coupons.each do |coupon|
+    if cart.keys.include?(coupon[:item]) #coupon can be applied
+      new_price = coupon[:cost] / coupon[:num]
+      if (cart[coupon[:item]][:count] >= coupon[:num])
+        cart[coupon[:item]][:count] -= coupon[:num]
+        cart[coupon[:item]+" W/COUPON"] = {:price => new_price, :clearance => cart[coupon[:item]][:clearance], :count => coupon[:num]}
+        #delete original item if new count is now 0
+        if (cart[coupon[:item]][:count] == 0)
+          cart.delete(coupon[:item])
+        end
+      end
+    end
+  end
+  cart
 end
 
 def apply_clearance(cart)
