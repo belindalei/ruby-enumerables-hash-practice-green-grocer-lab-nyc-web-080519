@@ -28,8 +28,6 @@ def apply_coupons(cart, coupons)
         cart[item + " W/COUPON"] = {:price => new_price, :clearance => cart[item][:clearance], :count => coupon[:num]}
       end
       cart[item][:count] -= coupon[:num]
-      if (cart[item][:count] == 0) #delete original item if new count is now 0
-      end
     end
   end
   cart
