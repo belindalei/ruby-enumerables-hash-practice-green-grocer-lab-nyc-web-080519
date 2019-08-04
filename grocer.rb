@@ -6,6 +6,13 @@ def consolidate_cart(cart)
   end 
 end
 
+items.each do |item|
+  item.each do |key, val|
+    puts key
+    puts val
+  end
+end
+
 def apply_coupons(cart, coupons)
   # code here
 end
